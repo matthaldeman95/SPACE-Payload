@@ -1,4 +1,5 @@
-void readGeigerString(){
+String readGeiger(){
+  
   GeigerString = "";
   if(Serial2.available() > 0){
     
@@ -8,5 +9,3 @@ void readGeigerString(){
     }
   }
 }
-
-

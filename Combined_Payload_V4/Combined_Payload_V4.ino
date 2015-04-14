@@ -77,7 +77,7 @@ void setup() {
   
   //Initialize Serial Ports  
   Serial2.begin(9600);    //Geiger Serial Port
-  Serial.begin(57600);   //Openlog or Computer Serial Port
+  Serial.begin(38400);   //Openlog or Computer Serial Port
   
   GPS.begin(9600);
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
@@ -89,6 +89,10 @@ void setup() {
 
 void loop() {
   delay(1000);  //Time between measurements
+  
+  //Read Geiger String
+  
+      readGeiger();
   
   //Read GPS Data
   
@@ -107,11 +111,8 @@ void loop() {
       
       delay(1000);
       
-  //Read Geiger String
   
-      void readGeigerString();
       
-      delay(1000);
       
   //Read ADIS Sensors
   
