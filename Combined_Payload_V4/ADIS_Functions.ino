@@ -4,10 +4,10 @@ void readADISSensors(){
   Serial.print("Gyro (degrees/second): ");
   float gyro = (readreg(GYROBITS, GYRO_OUT));
   gyro = (twoscomptransform(GYROBITS, gyro));
-  Serial.print(gyro * GYROSCALE);
+  Serial.println(gyro * GYROSCALE);
   
   // Read Accelerometer Values
-  Serial.print(", Accel (X,Y,Z) (in g): ");
+  Serial.print("Accel (X,Y,Z) (in g): ");
   float accelx = (readreg(ACCBITS, XACCL_OUT));
   float accely = (readreg(ACCBITS, YACCL_OUT));
   float accelz = (readreg(ACCBITS, ZACCL_OUT));
@@ -16,16 +16,9 @@ void readADISSensors(){
   accelz = (twoscomptransform(ACCBITS, accelz));
   Serial.print(accelx * ACCSCALE);  Serial.print(", ");  Serial.print(accely * ACCSCALE);  
   Serial.print(", ");     Serial.println(accelz * ACCSCALE); 
-  
-  // Read Temperature
-  Serial.print("Temp: ");
-  float temp = (readreg(TEMPBITS, TEMP_OUT));
-  temp = (twoscomptransform(TEMPBITS, temp));
-  Serial.print((temp * TEMPSCALE) + 25);
-  Serial.print("C");
  
   // Read Roll
-  Serial.print(";   Roll: ");
+  Serial.print("Roll: ");
   float roll = (readreg(ROLLBITS, ROLL_OUT));
   roll = (twoscomptransform(ROLLBITS, roll));
   Serial.print(roll * ROLLSCALE); 

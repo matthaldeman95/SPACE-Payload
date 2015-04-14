@@ -79,6 +79,7 @@ void setup() {
   Serial2.begin(9600);    //Geiger Serial Port
   Serial.begin(57600);   //Openlog or Computer Serial Port
   
+  //GPS Setup
   GPS.begin(9600);
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
   GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);
@@ -88,42 +89,22 @@ void setup() {
 }
 
 void loop() {
-  //   delay(1000);  //Time between measurements
+  delay(1000);  //Time between measurements
   
-  //Read Geiger String
+      readGPS();
+  
+      printGPS();
+      
+  delay(1000);
+      
+      readADISSensors();
+      
+  delay(1000);
+      
+       readMag();
+       
+  delay(1000);
   
       readGeiger();
-  
-  //Read GPS Data
-  
-      if (! usingInterrupt) {
-        // read data from the GPS in the 'main loop'
-        char c = GPS.read();
-        // if you want to debug, this is a good time to do it!
-    
-      }
-      if (GPS.newNMEAreceived()) {
-        if (!GPS.parse(GPS.lastNMEA()))
-        return;
-      }
-  
-      void printGPS();
-      
-      delay(1000);
-      
-  
-      
-      
-  //Read ADIS Sensors
-  
-      void readADISSensors();
-      
-      delay(1000);
-      
-  //Read Magnetometer Data
-  
-      void readMag();
-  
-  
   
 }

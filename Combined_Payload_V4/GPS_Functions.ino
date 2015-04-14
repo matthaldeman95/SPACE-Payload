@@ -49,3 +49,16 @@ void printGPS(){
     }
 }
 
+void readGPS(){
+  if (! usingInterrupt) {
+        // read data from the GPS in the 'main loop'
+        char c = GPS.read();
+        // if you want to debug, this is a good time to do it!
+    
+      }
+      if (GPS.newNMEAreceived()) {
+        if (!GPS.parse(GPS.lastNMEA()))
+        return;
+      }
+}
+

@@ -40,11 +40,13 @@ float zscale = (avg / zav);
   
   magnitude = sqrt(magnetom[0]*magnetom[0] + magnetom[1]*magnetom[1] + magnetom[2]*magnetom[2]);
   
+  Serial.print("B Field in Gauss (X,Y,Z): ");
   Serial.print(magnetom[0]);  Serial.print(", ");
   Serial.print(magnetom[1]);  Serial.print(", ");
-  Serial.print(magnetom[2]);  Serial.print(", ");
-  Serial.print(magnetom[3]);  Serial.print(", ");
-  Serial.print(magnitude);  Serial.print("       ");
+  Serial.println(magnetom[2]);  
+  //  Serial.print(", ");
+  //  Serial.print(magnetom[3]);  Serial.print(", ");     //Voltage reference for troubleshooting
+  //  Serial.print(magnitude);  Serial.print("       ");  //Total magnitude of mag field for troubleshooting
   
 }
 
