@@ -67,7 +67,7 @@ void setup() {
   SPI.setClockDivider(SPI_CLOCK_DIV16);
   
   //Initialize Serial Ports  
-  Serial3.begin(9600);    //Geiger Serial Port
+  Serial2.begin(9600);    //Geiger Serial Port
   Serial.begin(57600);   //Openlog or Computer Serial Port
   
   GPS.begin(9600);
@@ -125,21 +125,23 @@ void loop() {
   }
   
   
-  
+  */
   
    //Read Geiger Counter
    
   delay(1000);
   GeigerString = "";
-  if(Serial3.available() > 0){
+  if(Serial2.available() > 0){
     
-    GeigerString = Serial3.readStringUntil('\n');  
+    GeigerString = Serial2.readStringUntil('\n');  
     if(GeigerString != ""){
       Serial.println(GeigerString);
     }
   }
   
   delay(1000);
+  
+  /*
   
   //Read Magnetometer Values
  //Mag Field (Gauss) = (OutputVoltage-ReferenceVoltage)*(conversion factor = 2.5/512)
@@ -151,7 +153,7 @@ void loop() {
  Serial.print(xmagval);  Serial.print(", ");  Serial.print(ymagval);  Serial.print(", ");
  Serial.println(zmagval);
  
- */
+ 
   
   //Read ADIS Sensor Registers
   
@@ -193,7 +195,7 @@ void loop() {
  
  
  
-
+*/
  
  
  
