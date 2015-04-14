@@ -8,7 +8,7 @@
 #include <SPI.h>
 #include <SoftwareSerial.h>
 #include <Adafruit_GPS.h>
-Adafruit_GPS GPS(&Serial1);
+Adafruit_GPS GPS(&Serial3);
 #define GPSECHO  true
 boolean usingInterrupt = false;
 void useInterrupt(boolean);
@@ -86,7 +86,7 @@ void setup() {
 
 void loop() {
    delay(1000); // Time between measurements
-  /*
+  
   //Read GPS Data
   
   if (! usingInterrupt) {
@@ -124,8 +124,8 @@ void loop() {
     
   }
   
+ 
   
-  */
   
    //Read Geiger Counter
    

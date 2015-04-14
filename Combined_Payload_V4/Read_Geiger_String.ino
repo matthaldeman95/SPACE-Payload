@@ -1,11 +1,11 @@
-String readGeiger(){
-  
+void readGeiger(){
+  boolean stringcomplete = false;
   GeigerString = "";
-  if(Serial2.available() > 0){
-    
-    GeigerString = Serial2.readStringUntil('\n');  
-    if(GeigerString != ""){
-      Serial.println(GeigerString);
-    }
-  }
+    Serial2.begin(9600);
+
+       GeigerString = Serial2.readStringUntil('\n');
+       Serial.println(GeigerString);
+     
+     Serial2.end();
 }
+
