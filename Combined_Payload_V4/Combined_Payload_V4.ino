@@ -89,8 +89,9 @@ void setup() {
 }
 
 void loop() {
-  delay(1000);  //Time between measurements
   
+  delay(1000);  //Time between measurements
+  /*
       readGPS();
   
       printGPS();
@@ -104,7 +105,7 @@ void loop() {
        readMag();
        
   delay(1000);
-  
+  */
       readGeiger();
   
 }

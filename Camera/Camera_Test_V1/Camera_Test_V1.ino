@@ -5,7 +5,7 @@ uint8_t MH,ML;
 boolean EndFlag=0;
 
 void setup(){
-  Serial.begin(115200);
+  Serial.begin(38400);
   
   
 }
@@ -22,7 +22,7 @@ void loop(){
   delay(100);
   Serial1.begin(38400);
   delay(100);
-  SetImageSizeCmd(0x1D);
+  SetImageSizeCmd(0x11);
   delay(100);
   SendTakePhotoCmd();
   delay(3000);
@@ -69,5 +69,6 @@ void loop(){
     
   }
   
+  delay(100000);
 }
   

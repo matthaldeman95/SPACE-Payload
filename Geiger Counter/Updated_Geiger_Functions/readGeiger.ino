@@ -1,5 +1,4 @@
 void readGeiger(){
-  boolean stringcomplete = false;
   GeigerString = "";
     Serial2.begin(9600);
 
